@@ -1,16 +1,13 @@
-describe("Login and Logout Test", () => {
-  const email = "user888@gmail.com";
-  const password = "1234567890";
+describe("Login and Logout Test 2", () => {
+  const email = "testowyqa@qa.team";
+  const password = "QA!automation-1";
 
-  it("should login and logout successfully", () => {
+  it("should login and logout successfully with testowyqa@qa.team", () => {
     // Otwórz stronę logowania
     cy.visit("https://www.edu.goit.global/account/login");
 
     // Użyj polecenia logowania
     cy.login(email, password);
-
-    // Opcjonalnie poczekaj 2 sekundy na załadowanie strony po zalogowaniu
-    cy.wait(2000);
 
     // Poczekaj na załadowanie przycisku w prawym górnym rogu
     cy.get("#open-navigation-menu-mobile", { timeout: 10000 })
