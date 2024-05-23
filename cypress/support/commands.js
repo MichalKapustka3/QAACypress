@@ -28,3 +28,12 @@ Cypress.Commands.add("login", (email, password) => {
   cy.get('input[name="password"]').type(password);
   cy.get('button[type="submit"]').click();
 });
+import LoginPage from "../pages/Login";
+
+Cypress.Commands.add("login", (email, password) => {
+  const loginPage = new LoginPage();
+  loginPage.visit();
+  loginPage.fillEmail(email);
+  loginPage.fillPassword(password);
+  loginPage.submit();
+});
