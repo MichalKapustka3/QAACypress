@@ -1,0 +1,10 @@
+config:
+  target: "https://api.notion.com/v1/users"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+scenarios:
+  - name: GetUsers
+    flow:
+      - get:
+          url: "{{ target }}"

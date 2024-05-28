@@ -1,0 +1,12 @@
+config:
+  target: "https://api.notion.com/v1/blocks/{block_id}/children"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+scenarios:
+  - name: RetrieveBlockChildren
+    flow:
+      - post:
+          url: "{{ target }}"
+          json:
+            block_id: "example_block_id"
