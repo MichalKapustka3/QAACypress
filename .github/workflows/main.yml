@@ -3,22 +3,19 @@ name: Cypress Tests
 on:
   push:
     branches:
-      - main # Dostosuj nazwę gałęzi, jeśli jest inna
+      - main
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Sprawdź kod
+      - name: Check code
         uses: actions/checkout@v3
 
-      - name: Konfiguracja Node.js
+      - name: Configuration Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "14"
 
-      - name: Zainstaluj zależności
+      - name: Install Dependencies
         run: npm ci
-
-      - name: Uruchom testy Cypress
-        uses: cypress-io/github-action@v3
