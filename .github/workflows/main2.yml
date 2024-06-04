@@ -1,0 +1,22 @@
+
+name: Cypress Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  klawisz:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check code
+        uses: actions/checkout@v3
+
+      - name: Configuration Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+
+      - name: Install Dependencies
+        run: npm ci
